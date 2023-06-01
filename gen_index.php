@@ -84,9 +84,11 @@ $m1 = [];
 
 ListDirFullToArray(__DIR__, $m1);
 
+unlink(__DIR__."/index.html");
 foreach ($m1 AS $file){
 
-    output(__DIR__."/index.html", $file . "<br>");
+    if(strstr($file, '.html'))
+        output(__DIR__."/index.html", $file . "<br>");
 
 }
 
