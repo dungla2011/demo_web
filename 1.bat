@@ -1,0 +1,1 @@
+php gen_index.php

@@ -87,8 +87,10 @@ ListDirFullToArray(__DIR__, $m1);
 unlink(__DIR__."/index.html");
 foreach ($m1 AS $file){
 
-    if(strstr($file, '.html'))
-        output(__DIR__."/index.html", $file . "<br>");
+    if(strstr($file, '.html') || strstr($file, '.htm')){
+        $pathName = str_replace(__DIR__, "", $file);
+        output(__DIR__."/index.html", "<a href='$pathName'> $pathName </a><br>");
+    }
 
 }
 
