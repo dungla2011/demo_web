@@ -1,0 +1,32 @@
+body
+<script>
+
+
+// Constructor function cho đối tượng Car
+function Car(in_brand, in_name, in_weight, in_color) {
+  this.brand = in_brand;
+  this.name = in_name;
+  this.weight = in_weight;
+  this.color = in_color;
+}
+
+// Tạo 2 Car
+var myCar = new Car("Toyota", "Prius 2018", 850, "White");
+var friendCar = new Car("Ford", "Everest 2018", 900, "Grey");
+
+// Thêm method "getFullName" cho object myCar
+myCar.getFullName = function() {
+  return this.brand + " " + this.name;
+};
+ 
+//Thêm prototype cho cả class
+Car.prototype.getFullName1 = function() {
+  return this.brand + " " + this.name;
+};
+
+console.log("ABC1 " + myCar.getFullName())
+
+console.log("ABC11 " + myCar.getFullName1())
+
+
+</script>

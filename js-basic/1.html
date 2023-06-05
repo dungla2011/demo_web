@@ -1,0 +1,51 @@
+<style>
+  .red1 {
+    color: red;
+  }
+</style>
+<body>
+  <h1 class="red1">Hello world1</h1>
+  <h1 class="red1">Hello world2</h1>
+  <h1 class="red1">Hello world3</h1>
+
+  <form action="" id="form1">
+
+  </form>
+  
+</body>
+<script>
+  let m1 = [1, 2, 5];
+
+  m1 = m1.concat(6);
+
+  m1 = m1.concat(["a", "b"]);
+
+  // console.log("test = ", document.querySelectorAll("h1")[0].inner);
+
+  
+  function f1(opt){
+
+    console.log("test = ", opt)
+
+  }
+
+
+  f1(document.querySelector("#form1"))
+  
+
+
+  // setInterval(function() {
+  //   console.log("time = ", Date.now() )
+  //   // document.querySelector("h1").classList.toggle('red1')
+  //   document.querySelectorAll("h1").forEach(function(elm) {
+  //     console.log("elm = ", [elm]);
+  //     elm.classList.toggle('red1')
+
+
+
+  //   }
+  //   )
+  
+  // },1000 )
+
+</script>
