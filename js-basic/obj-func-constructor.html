@@ -1,7 +1,38 @@
-body
 <script>
 
+////////////////////////////////
+//Expression function
+var X = function(){
 
+  this.a = 1;
+  this.b = 2
+
+}
+
+////////////////////////////////
+//Es6 anonymous function
+const handleClick = () => {
+  console.log('clicked')
+}
+
+////////////////////////////////
+//Class definition
+//ES6 cho phép dạng class, dễ nhìn hơn
+class Honda extends Car {
+
+  brand = "Honda"
+  name = "ABC"
+
+}
+
+let c1 = new Honda()
+
+console.log(c1, c1.getFullName1())
+
+
+
+////////////////////////////////
+//Function declaration
 // Constructor function cho đối tượng Car
 function Car(in_brand, in_name, in_weight, in_color) {
   this.brand = in_brand;
@@ -27,6 +58,7 @@ Car.prototype.getFullName1 = function() {
 console.log("ABC1 " + myCar.getFullName())
 
 console.log("ABC11 " + myCar.getFullName1())
+
 
 
 </script>

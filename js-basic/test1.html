@@ -1,0 +1,33 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+  .red1 {
+    color: red;
+  }
+</style>
+<body>
+  <div class="abc">
+  <h1 class="red1">Hello world1</h1>
+  <h1 class="red1">Hello world2</h1>
+  <h1 class="red1">Hello world3</h1>
+  </div>
+  
+</body>
+<script>
+
+  document.querySelectorAll(".red1").forEach(function(elm) {
+      elm.style.color = 'blue'
+  }) 
+
+
+</script>
+
+<script>
+  $(document).ready(function(){
+
+
+    $(".red1").css("color",'red');
+
+  })
+  
+  </script>
+  
