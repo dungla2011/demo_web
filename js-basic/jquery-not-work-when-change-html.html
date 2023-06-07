@@ -1,0 +1,50 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+  .div1 {
+    border: 1px solid gray;
+    margin: 10px;
+    padding: 10px;
+  }
+</style>
+
+<body>
+<p>Click vào Nút các nút khác luôn thêm được Text </p>
+<p><b>Trong khi nút Add1 chỉ thêm được 1 lần, Tại sao? </b> </p> 
+<p>
+Trong khi code #add1 giống với code addHtml4()
+</p>
+  <button id="add0">Add0 </button>
+  <div class="div1">
+    <button id="add1">Add1 </button>
+    <button id="add2">Add2 </button>
+    <button onclick="addHtml3(this)">Add3 </button>
+    <button onclick="addHtml4(this)">Add4 </button>
+    <p>Hello world</p>
+  </div>
+</body>
+
+<script>
+
+  function addHtml3() {
+    document.querySelector(".div1").innerHTML += " <p>Hello3</p> " ;;    
+  }
+
+  function addHtml4() {
+    $(".div1").html($(".div1").html() + " <p>Hello4</p> ");
+  }
+
+    
+  $("#add0").on("click", function () {
+    $(".div1").html($(".div1").html() + " <p>Hello0</p> ");      
+  });
+  
+  $("#add1").on("click", function () {
+    $(".div1").html($(".div1").html() + " <p>Hello1</p> ");
+  });
+
+  $(document).on("click", "#add2", function () {
+    $(".div1").append(" <p>Hello2</p> ");
+  });
+
+
+</script>

@@ -4,30 +4,61 @@
     color: red;
   }
 </style>
+
 <body>
-  <div class="abc">
-  <h1 class="red1">Hello world1</h1>
-  <h1 class="red1">Hello world2</h1>
-  <h1 class="red1">Hello world3</h1>
+  <div class="div1">
+    <button id="btn1" onclick="addHtml(this)">Add </button>
+    <!-- <button id="btn1" >Add </button> -->
+    <!-- <button id="123" onclick="f2(this)"> ADD  </button> -->
+    <p class="red1">Hello world1</p>
+    <p class="red1">Hello world2</p>
   </div>
-  
 </body>
+
 <script>
-
-  document.querySelectorAll(".red1").forEach(function(elm) {
-      elm.style.color = 'blue'
-  }) 
-
-
+  $x = document.querySelector.bind(document);
+  document.querySelectorAll(".red1").forEach(function (elm) {
+    elm.style.color = 'blue'
+  })
+  function f2(ev) {
+    console.log(" val ", ev.id)
+  }
+  function addHtml() {
+    return;
+    console.log(" val ", $x(".div1").innerHTML)
+    //$x(".div1").innerHTML = $x(".div1").innerHTML + " <p class='h11'>Hello world2</p> " ;;
+    $(".div1").html($(".div1").html() + " <p class='h11'>Hello world2</p> ");
+    $x(".h11").style.color = 'green';
+    // $(".h11").css("color", 'blue');
+    console.log("h1 new = ", $x(".h11"))
+  }
 </script>
 
 <script>
-  $(document).ready(function(){
-
-
-    $(".red1").css("color",'red');
-
+  $(document).ready(function () {
+    $(".red1").css("color", 'red');
+    //$("#btn1").on("click", function () 
+    $(document).on("click", "#btn1", function () 
+    {
+      // return;
+      console.log("Click ...");
+      $(".div1").html($(".div1").html() + " <p class='h11'>Hello world3</p> ");
+      $x(".h11").style.color = 'green';
+      // $(".h11").css("color", 'blue');
+    });
   })
-  
-  </script>
-  
+
+  let obj1 = {
+    a: 1,
+    b: 2,
+    c: 3
+  }
+
+  // obj1 = [1,2,3]
+  // obj1.forEach( item => {
+  //   console.log(" item " , item);
+  // })
+  //Object.prototype.forEach.call(obj1, (x) => console.log(x));
+  // Array.prototype.forEach(obj1, item => {
+  // })
+</script>

@@ -1,0 +1,26 @@
+Viewsource, Mở Console để xem!
+<script>
+function createLogger(namespace){
+
+    function logger(message)
+    {
+        console.log(`[${namespace}] ${message}`);
+    }
+
+    return logger;
+}
+
+
+const logInfo = createLogger("Info");
+const logError = createLogger("Error");
+
+logInfo("Start send message...")
+logInfo("Start send message...")
+
+logError("Có lỗi xảy ra...")
+
+
+
+
+</script>
+
