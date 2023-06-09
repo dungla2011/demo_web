@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi, voluptate?</p>
+
+    <button id="123" abc="456" onclick="sayHello()"> SayHello</button>
+    <script>
+
+        function sayHello(){
+            console.log("Hello!")
+        }
+
+        let btn = document.querySelector("button")
+        btn.onclick = function(){
+            console.log("Hello2!")
+        }
+
+        btn.addEventListener('click', function(e){
+            console.log("Hello3 , ID = ", e.target.id);
+        })
+        
+        document.addEventListener("click", function(e){
+
+            console.log("Hello 4, ID = " , e.target.id)
+        });
+
+    </script>
+
+
+    
+    
+</body>
+</html>
