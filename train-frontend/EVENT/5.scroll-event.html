@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, reprehenderit? Ea, voluptatum eligendi! Corrupti debitis excepturi illum quia itaque odio sint nulla adipisci enim, unde, mollitia ad repellat quos porro?</p>
+
+    <div class="btn_up_top"> &#9651; </div>
+
+    <style>
+
+        body {
+            height: 2000px;
+            background-color: green;
+        }
+
+        .btn_up_top{
+            width: 40px;
+            height: 40px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ccc;
+            background-color: #eee;
+            text-align: center;
+            border-radius: 50%;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+        }
+        .btn_up_top:hover{
+            cursor: pointer
+        }
+    </style>
+    <script>
+
+        document.querySelector(".btn_up_top").addEventListener("click", function(){
+            console.log("Click ...");
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        })
+
+        window.addEventListener("scroll", function (e) {
+            console.log("scroll . ");
+
+            console.log(" To top = ", document.documentElement.scrollTop)
+            console.log("height . ", document.documentElement.clientHeight);
+            console.log("scroll height . ", document.documentElement.scrollHeight);
+
+            if (document.documentElement.scrollTop > 1400) {
+                console.log(" show button ")
+
+                document.querySelector(".btn_up_top").style.display = 'flex'
+
+            }
+            else {
+                document.querySelector(".btn_up_top").style.display = 'none'
+
+                console.log(" not show button ")
+            }
+
+
+
+        });
+
+    </script>
+
+</body>
+
+</html>
