@@ -18,6 +18,16 @@
         padding: 0px;
     }
 
+    .nav {
+        /* 
+        nav : nếu ko để là flex, thì mặc định là block
+        để là flex để xóa khoảng trắng bên phải của các phần tử Inline
+        Xem tại đây: https://viblo.asia/p/khoang-trang-bi-an-spacing-in-display-inline-block-6J3ZgjqRKmB
+        */
+        display: flex; 
+        
+    }
+
     a {
         text-decoration: none;
         /*color: #ccc;*/
@@ -254,7 +264,7 @@
 </div>
 
 <br>
-<h1> Menu NAV, dựa trên UL, LI </h1>
+<h1> Menu NAV, dựa trên UL, LI (hoặc DIV với class ul/li - tương tự UL/LI) </h1>
 
 <p>Menu có thể có không giới hạn cấp, thay đổi size màn hình để thấy mobile hiển thì menu (vd < 600px) </p>
 

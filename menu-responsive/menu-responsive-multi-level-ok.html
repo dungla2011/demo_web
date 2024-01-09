@@ -23,7 +23,15 @@
         text-decoration: none;
         /*color: #ccc;*/
     }
-
+    .nav {
+        /* 
+        nav : nếu ko để là flex, thì mặc định là block
+        để là flex để xóa khoảng trắng bên phải của các phần tử Inline
+        Xem tại đây: https://viblo.asia/p/khoang-trang-bi-an-spacing-in-display-inline-block-6J3ZgjqRKmB
+        */
+        display: flex; 
+        
+    }
     .nav > li {
         display: inline-block;
         color: white;
