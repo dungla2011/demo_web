@@ -19,13 +19,12 @@
     }
 
     .nav {
-        /* 
-        nav : nếu ko để là flex, thì mặc định là block
-        để là flex để xóa khoảng trắng bên phải của các phần tử Inline
+        /*
+        để là flex: chỉ để loại bỏ Khoảng trắng bên phải Phần tử menu ngang (đang là inline-block)
         Xem tại đây: https://viblo.asia/p/khoang-trang-bi-an-spacing-in-display-inline-block-6J3ZgjqRKmB
+        nav : nếu ko để là flex, thì mặc định là block
         */
-        display: flex; 
-        
+        display: flex;
     }
 
     a {
@@ -105,6 +104,11 @@
 
 
     @media screen and (max-width: 600px) {
+        .nav {
+            /*  nav : trở lại block để responsive ok */
+            display: block;
+        }
+
         .nav .sub-menu {
             display: none;
             position: static;
