@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.contain {
+    
+    background-color: royalblue;
+    width: 300px;
+    margin: auto;
+    /* min-height: 500px; */
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+
+}
+
+.todo-add {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+}
+.todo-add input {
+    width: 75%;
+    border: 0px;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    margin-right: 4%;
+}
+
+.todo-add button {
+    width: 18%;
+    background-color: royalblue;
+    color: white;
+    border: 0px;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 80%;
+}
+
+.todo-list {
+    margin-top: 20px;
+}
+
+.todo-list button {
+    background-color: brown;
+}
+
+.todo-list input {
+    margin-bottom: 10px;
+    border: 1px dashed #ccc;
+    width: 60%;
+
+}
+
+.todo-add button {
+    width: 15%;
+}
+
+.todo-add button.edit {
+    background-color: green;
+}
+
+
+</style>
+
+
+
+<body>
+
+
+<div class="contain">
+    
+    <div class="todo-add">
+        <input type="text" id="new_task" placeholder=" Thêm công việc">
+        <button id="add"> Add </button>
+    </div>
+
+    <div class="todo-add todo-list" id="all-task">
+
+        <div id="first" style="display: none;">
+            <input type="text" readonly>
+            <button class="edit"> Sửa </button>
+            <button class=""> Xóa </button>
+        </div>
+
+
+    </div>
+
+
+</div>
+    
+</body>
+
+</html>
+
+
+<script>
+
+    document.getElementById("add").onclick = function(){
+        //Lấy tên task mới
+        let newTaskText = document.getElementById('new_task').value;
+        console.log("Add ...", newTaskText)
+        
+        //Clone mẫu ra để thêm vào list (append)
+        let newElm = document.getElementById("first").cloneNode(true)
+
+        //Thêm vào con của all-task
+        document.getElementById('all-task').appendChild(newElm)
+
+        //Đặt giá trị input bằng task  mới
+        newElm.querySelectorAll("input")[0].value = newTaskText;
+        newElm.id = '';
+        newElm.style.display = 'block'
+        
+        //Lấy nút xóa trong phần tử mới và Thêm sự kiện click để xóa cha của nó
+        //Chính là xóa task mới đi ra khỏi danh sách
+        newElm.querySelectorAll("button")[0].onclick = function(elm){
+            console.log("Remove me")
+            elm.target.parentNode.remove()
+            //elm.target.remove()
+        }
+    }
+
+
+
+</script>
